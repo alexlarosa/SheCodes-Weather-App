@@ -1,0 +1,225 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  position: relative;
+  background: url(image/shadow_wall.jpeg) center/30% 97% fixed no-repeat;
+  background-color: #f7ead7;
+}
+div.home {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+header,
+h1,
+h2 {
+  text-align: center;
+}
+header {
+  font-weight: lighter;
+  font-size: 50px;
+  margin-top: 30px;
+  color: #9a5c45;
+}
+header.home-question {
+  position: fixed;
+  padding: 100px;
+  margin: 0;
+  width: 100%;
+}
+h1 {
+  font-weight: bold;
+  font-size: 60px;
+  padding: 10px;
+  color: #763626;
+}
+h1.home {
+  max-width: 950px;
+  margin: 150px auto 50px;
+}
+h1.city {
+  margin: 20px auto 25px;
+  max-width: 500px;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 50px;
+  line-height: 50px;
+  background: fixed;
+  background-color: rgba(17, 54, 47, 0.8);
+  color: #f7ead7;
+  border-radius: 10px;
+  padding: 7px 20px 30px;
+  max-width: 500px;
+}
+img.two-dots,
+img.four-dots {
+  position: fixed;
+  opacity: 70%;
+  width: 1200px;
+  margin: 0 10px 0 700px;
+  top: -200px;
+}
+section#day-and-time {
+  color: ç;
+  text-align: center;
+  font-size: 20px;
+}
+div.card {
+  border-radius: 10px;
+}
+
+div.current-weather {
+  font-style: italic;
+  padding-top: 25px;
+  font-family: "Dancing Script", cursive;
+}
+i.today {
+  font-size: 200px;
+  padding: 30px;
+}
+span.current-temps,
+a#current-metric,
+span.divider,
+a#current-imperial {
+  position: relative;
+  top: 20px;
+}
+#current-metric,
+span.divider,
+#current-imperial {
+  font-size: 30px;
+  padding-bottom: 100px;
+}
+h3 {
+  color: #fffcf6;
+  line-height: 50px;
+  font-size: 20px;
+}
+h5 {
+  padding-top: 20px;
+  text-decoration: underline;
+}
+h5.todays-range {
+  font-size: 30px;
+  margin: 0 auto 40px;
+}
+div.low,
+div.high {
+  background: rgba(155, 171, 132, 0.8);
+  opacity: 80%;
+  margin: 100px auto;
+  float: none;
+  max-width: 280px;
+  padding: 10px auto 20px;
+}
+div.weeklys {
+  color: rgba(155, 171, 132);
+  background-color: #fffcf6;
+  opacity: 85%;
+  margin-bottom: 30px;
+}
+div.col-2 {
+  margin: 0 auto;
+  float: none;
+  margin-top: 90px;
+  margin-bottom: 50px;
+  opacity: 90%;
+}
+h4 {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  font-family: "Dancing Script", cursive;
+}
+i.this-week {
+  font-size: 70px;
+  margin: 30px auto 0;
+}
+.card-body {
+  margin-top: 0;
+}
+.weekly-lows {
+  position: relative;
+  right: -10px;
+  top: 48px;
+  max-width: 34px;
+}
+
+.weekly-highs {
+  position: relative;
+  left: 53px;
+  bottom: 1px;
+}
+.new-city,
+.new-search {
+  font-family: "Quicksand", sans-serif;
+  background: #bd8069;
+  opacity: 80%;
+  border: 1px solid #ad867a;
+  border-radius: 10px;
+  box-shadow: 2px, 2px, 5px, rgb(0, 0, 0.3);
+  position: fixed;
+  bottom: 10px;
+  color: #763626;
+}
+.new-city {
+  padding: 5px;
+  left: 40px;
+  bottom: 10px;
+  min-width: 300px;
+}
+.new-search {
+  margin-left: 100px;
+  padding: 3px;
+  left: 250px;
+  bottom: 12px;
+  width: 75px;
+  transition: all 200ms ease;
+  outline: none;
+}
+.new-search:hover {
+  background: rgba(17, 54, 47);
+  color: #fffcf6;
+}
+.home-search,
+.home-city {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  background: rgba(251, 234, 208, 0.7);
+  opacity: 80%;
+  border-radius: 10px;
+  border: 1px solid #ad867a;
+  box-shadow: 50px, 50px, 100px, rgb(0, 0, 0.1);
+  margin: 0 auto;
+  display: block;
+  line-height: 30px;
+  font-size: 30px;
+  padding: 10px;
+  text-decoration: none;
+  outline: none;
+}
+::placeholder {
+  color: rgba(17, 54, 47);
+}
+.home-city {
+  width: 395px;
+}
+.home-search {
+  transition: all 200ms ease;
+}
+.home-search:hover {
+  background-color: rgba(243, 201, 103, 0.7);
+  color: rgba(17, 54, 47);
+}
+a:-webkit-any-link {
+  color: rgba(17, 54, 47);
+  text-decoration: none;
+}
+a:active {
+  text-decoration: underline;
+}
+a:visited {
+  color: #763626;
+}
