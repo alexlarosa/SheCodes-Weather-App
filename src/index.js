@@ -21,44 +21,57 @@ function formatDate(date) {
   let currentDate = `${day} ${hour}:${minutes}`;
   return currentDate;
 }
-console.log(formatDate(now));
 currentDayTime.innerHTML = formatDate(now);
 
-
-//feature 2
-function search(event){
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-
-  let header = document.querySelector("header");
-  header.innerHTML = `🕵🏼‍♀️ Searching for...`;
-  
-  let h1 = document.querySelector("h1, .city");
-  if (searchInput.value) {
-    h1.innerHTML = `${searchInput.value}`;
-  } else {
-    h1.innerHTML = `🧚🏾‍♂️ Neverland✨`;
-  }
+function displayWeatherCondition(response) {
+  document.querySelector(".city").innerHTML = response.data.name;
+  document.querySelector(".current-temps").innerHTML = `${Math.round(
+    response.data.main.temp
+  )}°`;
+  document.querySelector(".current-weather").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#celciusHighToday").innerHTML = `${Math.round(
+    response.data.main.temp_max
+  )} °C`;
+  document.querySelector("#celciusLowToday").innerHTML = `${Math.round(
+    response.data.main.temp_min
+  )} °C`;
 }
-let form = document.querySelector("form, .new-city");
-form.addEventListener("submit", search);
 
-//bonus feature
-function changeToImperial(event){
-  event.preventDefault();
-  let section = document.querySelector(".current-temps");
-  section.innerHTML =  `5°`
-
+function showCity(city) {
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let apiKey = "aea833a90485bad517aeb7963cee7156";
+  let units = "metric";
+  let apiUrl = `${apiEndpoint}?q=${city}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayWeatherCondition);
 }
-let imperial = document.querySelector("#current-metric")
-imperial.addEventListener("click", changeToImperial);
 
-
-function changeToMetric(event){
+function handleSubmit(event) {
   event.preventDefault();
-  let section = document.querySelector(".current-temps");
-  section.innerHTML =  `41°`
-
+  let city = document.querySelector("#search-text-input").value;
+  showCity(city);
 }
-let metric = document.querySelector("#current-imperial")
-metric.addEventListener("click", changeToMetric);
+
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "aea833a90485bad517aeb7963cee7156";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let units = "metric";
+  let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let searchForm = document.querySelector(".container");
+searchForm.addEventListener("submit", handleSubmit);
+
+let currentLocationButton = document.querySelector(".geolocation");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+showCity("Madrid");

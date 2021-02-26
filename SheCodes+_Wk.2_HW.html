@@ -24,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alex's Weather App</title>
     <link rel="stylesheet" href="src/Hw2.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <img src="media/four-dots.png" alt="four dots" class="four-dots" />
@@ -36,11 +37,7 @@
             <div class="card text-center low" style="width: 18rem">
               <div class="card-body">
                 <h5 class="card-title todays-range">Today's low is</h5>
-                <p class="card-text">
-                  0°C
-                  <br />
-                  32°F
-                </p>
+                <p class="card-text" id="celciusLowToday"></p>
               </div>
             </div>
           </h3>
@@ -48,9 +45,9 @@
         <div class="col-4">
           <h2>
             <section id="day-and-time"></section>
-            <span>Currently, it's...</span>
-            <div class="current-weather">rainy</div>
-            <span class="current-temps">5°</span>
+            <span>Currently, you'll see...</span>
+            <div class="current-weather"></div>
+            <span class="current-temps"></span>
             <a href="#" id="current-metric">C</a>
             <span class="divider">|</span>
             <a href="#" id="current-imperial">F</a>
@@ -62,10 +59,10 @@
             <div class="card text-center high" style="width: 18rem">
               <div class="card-body">
                 <h5 class="card-title todays-range">Today's high is</h5>
-                <p class="card-text">
-                  10°C
+                <p class="card-text" id="celciusHighToday">
+                  °C
                   <br />
-                  50°F
+                  °F
                 </p>
               </div>
             </div>
@@ -178,6 +175,7 @@
           id="search-text-input"
         />
         <input type="submit" value="Search" class="new-search" />
+        <input type="submit" value="📍 Current Location" class="geolocation" />
       </form>
     </div>
     <script src="src/index.js"></script>
