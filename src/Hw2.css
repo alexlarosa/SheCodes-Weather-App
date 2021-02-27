@@ -2,7 +2,7 @@ body {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   position: relative;
-  background: url(image/shadow_wall.jpeg) center/30% 97% fixed no-repeat;
+  background: url(image/shadow_wall.jpeg) center/cover fixed no-repeat;
   background-color: #f7ead7;
 }
 div.home {
@@ -170,16 +170,21 @@ i.this-week {
   bottom: 10px;
   min-width: 300px;
 }
-.new-search {
+.new-search,
+.geolocation {
   margin-left: 100px;
   padding: 3px;
   left: 250px;
   bottom: 12px;
-  width: 75px;
+  width: fit-content;
   transition: all 200ms ease;
   outline: none;
 }
-.new-search:hover {
+.geolocation {
+  left: 320px;
+}
+.new-search:hover,
+.geolocation:hover {
   background: rgba(17, 54, 47);
   color: #fffcf6;
 }
