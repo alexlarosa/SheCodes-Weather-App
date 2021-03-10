@@ -26,16 +26,14 @@ currentDayTime.innerHTML = formatDate(now);
 function displayWeatherCondition(response) {
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector(".current-temps").innerHTML = `${Math.round(
-    response.data.main.temp
-  )}°`;
+    response.data.main.temp)}°`;
   document.querySelector(".current-weather").innerHTML =
-    response.data.weather[0].main;
-  document.querySelector("#celciusHighToday").innerHTML = `${Math.round(
-    response.data.main.temp_max
-  )} °C`;
-  document.querySelector("#celciusLowToday").innerHTML = `${Math.round(
-    response.data.main.temp_min
-  )} °C`;
+    response.data.weather[0].main.toLowerCase();
+  document.querySelector("#celciusHighToday").innerHTML = 
+    `${Math.round(response.data.main.temp_max)} °C`;
+  document.querySelector("#celciusLowToday").innerHTML = 
+    `${Math.round(response.data.main.temp_min)} °C`;
+  document.querySelector("#windSpeed").innerHTML = `${Math.round(response.data.wind.speed)} kmp`;
 }
 
 function showCity(city) {

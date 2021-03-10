@@ -2,13 +2,21 @@ body {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   position: relative;
-  background: url(image/shadow_wall.jpeg) center/cover fixed no-repeat;
   background-color: #f7ead7;
+  background: url(image/shadow_wall.jpeg) center/cover fixed no-repeat;
 }
 div.home {
   display: block;
   align-items: center;
   justify-content: center;
+  max-width: 800px;
+  margin: 30px auto;
+  border: 1px solid #763626;
+  border-radius: 10px;
+  background: url(image/shadow_wall.jpeg) center/cover fixed no-repeat;
+}
+div#weather-app {
+  max-width: 900px;
 }
 header,
 h1,
@@ -53,7 +61,6 @@ h2 {
   padding: 7px 20px 30px;
   max-width: 500px;
 }
-img.two-dots,
 img.four-dots {
   position: fixed;
   opacity: 70%;
@@ -62,7 +69,7 @@ img.four-dots {
   top: -200px;
 }
 section#day-and-time {
-  color: ç;
+  color: #f7ead7;
   text-align: center;
   font-size: 20px;
 }
@@ -76,7 +83,7 @@ div.current-weather {
   font-family: "Dancing Script", cursive;
 }
 i.today {
-  font-size: 200px;
+  font-size: 100px;
   padding: 30px;
 }
 span.current-temps,
@@ -94,25 +101,12 @@ span.divider,
 }
 h3 {
   color: #fffcf6;
-  line-height: 50px;
   font-size: 20px;
 }
-h5 {
-  padding-top: 20px;
-  text-decoration: underline;
-}
-h5.todays-range {
-  font-size: 30px;
-  margin: 0 auto 40px;
-}
-div.low,
-div.high {
-  background: rgba(155, 171, 132, 0.8);
-  opacity: 80%;
-  margin: 100px auto;
-  float: none;
-  max-width: 280px;
-  padding: 10px auto 20px;
+
+ul {
+  list-style: none;
+  font-size: 16px;
 }
 div.weeklys {
   color: rgba(155, 171, 132);
@@ -134,8 +128,8 @@ h4 {
   font-family: "Dancing Script", cursive;
 }
 i.this-week {
-  font-size: 70px;
-  margin: 30px auto 0;
+  font-size: 30px;
+  margin: 10px auto 0;
 }
 .card-body {
   margin-top: 0;

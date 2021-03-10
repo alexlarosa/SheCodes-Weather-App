@@ -29,154 +29,142 @@
   <body>
     <img src="media/four-dots.png" alt="four dots" class="four-dots" />
     <div class="container">
-      <header>Alex, tell me about the weather in:</header>
-      <h1 class="city">🔮👀</h1>
-      <div class="row">
-        <div class="col-4">
-          <h3 class="low">
-            <div class="card text-center low" style="width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title todays-range">Today's low is</h5>
-                <p class="card-text" id="celciusLowToday"></p>
-              </div>
-            </div>
-          </h3>
+      <div id="weather-app">
+        <header>Alex, tell me about the weather in:</header>
+        <h1 class="city"></h1>
+        <div class="row">
+          <div class="col-8">
+            <h2>
+              <section id="day-and-time"></section>
+              <span>Currently, you'll see...</span>
+              <div class="current-weather"></div>
+              <span class="current-temps"></span>
+              <a href="#" id="current-metric">C</a>
+              <span class="divider">|</span>
+              <a href="#" id="current-imperial">F</a>
+              <i class="fas fa-cloud-rain today"></i>
+              <ul>
+                <li>Today's low is <span id="celciusLowToday"></span></li>
+                <li>Today's high is <span id="celciusHighToday"></span></li>
+                <li>Precipitation: <span id="precpitation">%</span></li>
+                <li>Wind Speed: <span id="windSpeed"></span></li>
+              </ul>
+            </h2>
+          </div>
         </div>
-        <div class="col-4">
-          <h2>
-            <section id="day-and-time"></section>
-            <span>Currently, you'll see...</span>
-            <div class="current-weather"></div>
-            <span class="current-temps"></span>
-            <a href="#" id="current-metric">C</a>
-            <span class="divider">|</span>
-            <a href="#" id="current-imperial">F</a>
-            <i class="fas fa-cloud-rain today"></i>
-          </h2>
-        </div>
-        <div class="col-4">
-          <h3 class="high">
-            <div class="card text-center high" style="width: 18rem">
+        <div class="row">
+          <div class="col-2">
+            <div class="card text-center weeklys" style="max-width: 18rem">
+              <h5 class="card-title">Monday</h5>
               <div class="card-body">
-                <h5 class="card-title todays-range">Today's high is</h5>
-                <p class="card-text" id="celciusHighToday">
-                  °C
+                <h4 class="card-title">cloudy</h4>
+                <i class="fas fa-cloud this-week"></i>
+                <section class="weekly-lows">
+                  0°C
                   <br />
-                  °F
-                </p>
+                  32°F
+                </section>
+                <span class="weekly-highs">
+                  10°C
+                  <br />
+                  50°F
+                </span>
               </div>
             </div>
-          </h3>
+          </div>
+          <div class="col-2">
+            <div class="card text-center weeklys" style="max-width: 18rem">
+              <h5 class="card-title">Tuesday</h5>
+              <div class="card-body">
+                <h4 class="card-title">light showers</h4>
+                <i class="fas fa-cloud-rain this-week"></i>
+                <section class="weekly-lows">
+                  0°C
+                  <br />
+                  32°F
+                </section>
+                <span class="weekly-highs">
+                  10°C
+                  <br />
+                  50°F
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card text-center weeklys" style="max-width: 18rem">
+              <h5 class="card-title">Wednesday</h5>
+              <div class="card-body">
+                <h4 class="card-title">sunny</h4>
+                <i class="fas fa-sun this-week"></i>
+                <section class="weekly-lows">
+                  0°C
+                  <br />
+                  32°F
+                </section>
+                <span class="weekly-highs">
+                  10°C
+                  <br />
+                  50°F
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card text-center weeklys" style="max-width: 18rem">
+              <h5 class="card-title">Thursday</h5>
+              <div class="card-body">
+                <h4 class="card-title">partly cloudy</h4>
+                <i class="fas fa-cloud-sun this-week"></i>
+                <section class="weekly-lows">
+                  0°C
+                  <br />
+                  32°F
+                </section>
+                <span class="weekly-highs">
+                  10°C
+                  <br />
+                  50°F
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card text-center weeklys" style="max-width: 18rem">
+              <h5 class="card-title">Friday</h5>
+              <div class="card-body">
+                <h4 class="card-title">partly cloudly</h4>
+                <i class="fas fa-cloud-sun this-week"></i>
+                <section class="weekly-lows">
+                  0°C
+                  <br />
+                  32°F
+                </section>
+                <span class="weekly-highs">
+                  10°C
+                  <br />
+                  50°F
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
+        <form>
+          <input
+            type="text"
+            placeholder="Search for another city 👇"
+            class="new-city"
+            autocomplete="off"
+            id="search-text-input"
+          />
+          <input type="submit" value="Search" class="new-search" />
+          <input
+            type="submit"
+            value="📍 Current Location"
+            class="geolocation"
+          />
+        </form>
       </div>
-      <div class="row">
-        <div class="col-2">
-          <div class="card text-center weeklys" style="max-width: 18rem">
-            <h5 class="card-title">Monday</h5>
-            <div class="card-body">
-              <h4 class="card-title">cloudy</h4>
-              <i class="fas fa-cloud this-week"></i>
-              <section class="weekly-lows">
-                0°C
-                <br />
-                32°F
-              </section>
-              <span class="weekly-highs">
-                10°C
-                <br />
-                50°F
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card text-center weeklys" style="max-width: 18rem">
-            <h5 class="card-title">Tuesday</h5>
-            <div class="card-body">
-              <h4 class="card-title">light showers</h4>
-              <i class="fas fa-cloud-rain this-week"></i>
-              <section class="weekly-lows">
-                0°C
-                <br />
-                32°F
-              </section>
-              <span class="weekly-highs">
-                10°C
-                <br />
-                50°F
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card text-center weeklys" style="max-width: 18rem">
-            <h5 class="card-title">Wednesday</h5>
-            <div class="card-body">
-              <h4 class="card-title">sunny</h4>
-              <i class="fas fa-sun this-week"></i>
-              <section class="weekly-lows">
-                0°C
-                <br />
-                32°F
-              </section>
-              <span class="weekly-highs">
-                10°C
-                <br />
-                50°F
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card text-center weeklys" style="max-width: 18rem">
-            <h5 class="card-title">Thursday</h5>
-            <div class="card-body">
-              <h4 class="card-title">partly cloudy</h4>
-              <i class="fas fa-cloud-sun this-week"></i>
-              <section class="weekly-lows">
-                0°C
-                <br />
-                32°F
-              </section>
-              <span class="weekly-highs">
-                10°C
-                <br />
-                50°F
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card text-center weeklys" style="max-width: 18rem">
-            <h5 class="card-title">Friday</h5>
-            <div class="card-body">
-              <h4 class="card-title">partly cloudly</h4>
-              <i class="fas fa-cloud-sun this-week"></i>
-              <section class="weekly-lows">
-                0°C
-                <br />
-                32°F
-              </section>
-              <span class="weekly-highs">
-                10°C
-                <br />
-                50°F
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <form>
-        <input
-          type="text"
-          placeholder="Search for another city 👇"
-          class="new-city"
-          autocomplete="off"
-          id="search-text-input"
-        />
-        <input type="submit" value="Search" class="new-search" />
-        <input type="submit" value="📍 Current Location" class="geolocation" />
-      </form>
     </div>
     <script src="src/index.js"></script>
   </body>
