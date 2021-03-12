@@ -17,6 +17,7 @@ div.home {
 }
 div#weather-app {
   max-width: 900px;
+  margin: 0 auto;
 }
 header,
 h1,
@@ -58,15 +59,7 @@ h2 {
   background-color: rgba(17, 54, 47, 0.8);
   color: #f7ead7;
   border-radius: 10px;
-  padding: 7px 20px 30px;
   max-width: 500px;
-}
-img.four-dots {
-  position: fixed;
-  opacity: 70%;
-  width: 1200px;
-  margin: 0 10px 0 700px;
-  top: -200px;
 }
 section#day-and-time {
   color: #f7ead7;
@@ -75,6 +68,7 @@ section#day-and-time {
 }
 div.card {
   border-radius: 10px;
+  width: ;
 }
 
 div.current-weather {
@@ -106,7 +100,7 @@ h3 {
 
 ul {
   list-style: none;
-  font-size: 16px;
+  font-size: 18px;
 }
 div.weeklys {
   color: rgba(155, 171, 132);
